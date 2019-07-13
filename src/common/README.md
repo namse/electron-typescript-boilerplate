@@ -1,0 +1,1 @@
+The directory `src/common` is common codes directory for frontend and backend.
