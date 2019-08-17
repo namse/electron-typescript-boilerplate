@@ -4,6 +4,9 @@
 
 # UPDATED
 
+## React
+* check *"react"* branch!
+
 ## Directory
 * `/src/backend` is Electron Core backend, which run in Node.js.
 * `/src/frontend` is Electron frontend which used by BrowserWindow.
