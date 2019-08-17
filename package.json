@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A minimal Electron application written with Typescript",
   "scripts": {
-    "build": "tsc && node buildScripts/copyAllResources.js",
-    "watch": "concurrently --kill-others \"tsc -w\" \"node buildScripts/watchResources.js\"",
+    "build": "babel ./src --source-maps --out-dir dist --extensions .ts,.tsx && node buildScripts/copyAllResources.js",
+    "watch": "concurrently --kill-others \"babel --watch ./src --source-maps --out-dir dist --extensions .ts,.tsx\" \"node buildScripts/watchResources.js\"",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "start": "npm run build && electron ./dist/backend/main.js"
   },
@@ -23,6 +23,17 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.8.5",
+    "babel-preset-env": "^1.7.0",
     "concurrently": "^4.1.1",
     "parcel-bundler": "^1.12.3",
     "tslint": "^5.18.0",
@@ -30,6 +41,8 @@
   },
   "dependencies": {
     "electron": "^5.0.6",
-    "module-alias": "^2.2.0"
+    "module-alias": "^2.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }

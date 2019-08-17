@@ -24,7 +24,7 @@ async function copyAllResources() {
 
   const files = await getFiles(srcPath);
 
-  const notTsFiles = files.filter(file => !file.endsWith('.ts'));
+  const notTsFiles = files.filter(file => !file.endsWith('.ts') && !file.endsWith('.tsx'));
 
   await Promise.all(notTsFiles.map((file) => {
     return copyResource(file);

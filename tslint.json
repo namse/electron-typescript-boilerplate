@@ -12,6 +12,7 @@
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": false,
     "quotemark": false,
+    "no-console": false
   },
   "jsRules": {
     "max-line-length": {

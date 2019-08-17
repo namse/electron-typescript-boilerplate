@@ -22,7 +22,7 @@ function watchResources() {
   const filePath = path.join(__dirname, '../src');
 
   fs.watch(filePath, { recursive: true }, (event, filename) => {
-    if (filename.endsWith('.ts')) {
+    if (filename.endsWith('.ts') || filename.endsWith('.tsx')) {
       return;
     }
     requestMoveFile(path.resolve(filePath, filename));

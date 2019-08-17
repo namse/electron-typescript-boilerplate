@@ -3,5 +3,9 @@
 // All of the Node.js APIs are available in this process.
 
 import * as electron from 'electron';
-
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './App';
 console.log(electron);
+
+ReactDOM.render(<App />, document.getElementById('root'));
